@@ -11,7 +11,7 @@ import { ToastContextProvider } from "@/components/ui/use-toast"; // Import Toas
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MovieDB - Your Movie Database",
+  title: "tmdb_ixe",
   description: "Discover and explore movies from around the world",
 };
 
