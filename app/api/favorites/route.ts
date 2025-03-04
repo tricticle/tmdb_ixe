@@ -6,7 +6,7 @@ import { addFavorite, removeFavorite, getUserFavorites } from "@/lib/favorites";
 export async function GET() {
   const session = await getServerSession(authOptions);
 
-  if (!session) {
+  if (!session || !session.user || !session.user.id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -16,8 +16,8 @@ export async function GET() {
   } catch (error) {
     console.error("Failed to fetch favorites:", error);
     return NextResponse.json(
-      { error: "Failed to fetch favorites" },
-      { status: 500 }
+        { error: "Failed to fetch favorites" },
+        { status: 500 }
     );
   }
 }
@@ -25,7 +25,7 @@ export async function GET() {
 export async function POST(request: Request) {
   const session = await getServerSession(authOptions);
 
-  if (!session) {
+  if (!session || !session.user || !session.user.id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -34,8 +34,8 @@ export async function POST(request: Request) {
 
     if (!movieId) {
       return NextResponse.json(
-        { error: "Movie ID is required" },
-        { status: 400 }
+          { error: "Movie ID is required" },
+          { status: 400 }
       );
     }
 
@@ -44,8 +44,8 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Failed to add favorite:", error);
     return NextResponse.json(
-      { error: "Failed to add favorite" },
-      { status: 500 }
+        { error: "Failed to add favorite" },
+        { status: 500 }
     );
   }
 }
@@ -53,7 +53,7 @@ export async function POST(request: Request) {
 export async function DELETE(request: Request) {
   const session = await getServerSession(authOptions);
 
-  if (!session) {
+  if (!session || !session.user || !session.user.id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -62,8 +62,8 @@ export async function DELETE(request: Request) {
 
     if (!movieId) {
       return NextResponse.json(
-        { error: "Movie ID is required" },
-        { status: 400 }
+          { error: "Movie ID is required" },
+          { status: 400 }
       );
     }
 
@@ -72,8 +72,8 @@ export async function DELETE(request: Request) {
   } catch (error) {
     console.error("Failed to remove favorite:", error);
     return NextResponse.json(
-      { error: "Failed to remove favorite" },
-      { status: 500 }
+        { error: "Failed to remove favorite" },
+        { status: 500 }
     );
   }
 }
