@@ -1,24 +1,26 @@
-import { redirect } from "next/navigation"
-import { getServerSession } from "next-auth"
-import { authOptions } from "@/lib/auth"
-import { UserProfile } from "@/components/user-profile"
-import { FavoriteMovies } from "@/components/favorite-movies"
-import type { Metadata } from "next"
-import { getUserFavorites } from "@/lib/favorites"
+import { redirect } from "next/navigation";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { UserProfile } from "@/components/user-profile";
+import { FavoriteMovies } from "@/components/favorite-movies";
+import type { Metadata } from "next";
+import { getUserFavorites } from "@/lib/favorites";
 
 export const metadata: Metadata = {
   title: "Dashboard - MovieDB",
   description: "View your profile and favorite movies",
-}
+};
 
 export default async function DashboardPage() {
-  const session = await getServerSession(authOptions)
+  const session = await getServerSession(authOptions);
 
-  if (!session) {
-    redirect("/api/auth/signin")
+  // Ensure session and session.user exist before proceeding
+  if (!session || !session.user) {
+    redirect("/api/auth/signin");
+    return null; // Prevents further execution
   }
 
-  const favorites = await getUserFavorites(session.user.id)
+  const favorites = await getUserFavorites(session.user.id);
 
   return (
     <div className="container py-8">
@@ -29,6 +31,5 @@ export default async function DashboardPage() {
         <FavoriteMovies favorites={favorites} />
       </div>
     </div>
-  )
+  );
 }
-

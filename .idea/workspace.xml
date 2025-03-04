@@ -5,25 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9240a32d-4bf3-4526-a568-10d7606afed6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tmdb.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/favorites/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/favorites/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/api/signup/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/signup/route.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/movies/[id]/not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/movies/[id]/not-found.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/movies/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/movies/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/search/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/search/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/signin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/signin/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/favorite-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/favorite-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/movie-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/movie-card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/movie-details.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/movie-details.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/use-toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/use-toast.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/use-toast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/use-toast.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/auth.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +33,7 @@
     &quot;Node.js.route.ts.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Reverting in master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;E:/ixe/tmdb&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -57,7 +41,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\tricticle\\webStorm\\WebStorm 2024.3.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\ixe\\tmdb\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -81,7 +65,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-WS-243.24978.60" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.25659.40" />
       </set>
     </attachedChunks>
   </component>
@@ -94,7 +78,8 @@
       <option name="presentableId" value="Default" />
       <updated>1741062389589</updated>
       <workItem from="1741062391107" duration="4587000" />
-      <workItem from="1741067245314" duration="267000" />
+      <workItem from="1741067245314" duration="627000" />
+      <workItem from="1741067926919" duration="645000" />
     </task>
     <servers />
   </component>
