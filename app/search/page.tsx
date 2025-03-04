@@ -42,7 +42,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             <div className="text-center py-12">
               <h3 className="text-xl font-medium mb-2">No movies found</h3>
               <p className="text-muted-foreground">
-                Try adjusting your search or filter to find what you&lsquo;re looking for.
+                Try adjusting your search or filter to find what you're looking for.
               </p>
             </div>
           )}

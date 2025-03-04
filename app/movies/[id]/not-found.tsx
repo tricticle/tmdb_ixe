@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="container flex flex-col items-center justify-center min-h-[50vh] py-12 text-center">
       <h2 className="text-3xl font-bold mb-4">Movie Not Found</h2>
       <p className="text-muted-foreground mb-6 max-w-md">
-        We couldn&lsquo;t find the movie you&lsquo;re looking for. It may have been removed or you might have followed a broken
+        We couldn't find the movie you're looking for. It may have been removed or you might have followed a broken
         link.
       </p>
       <Button asChild>
