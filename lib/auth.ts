@@ -2,6 +2,7 @@ import type { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { compare, hash } from "bcrypt";
 
 const prisma = new PrismaClient();

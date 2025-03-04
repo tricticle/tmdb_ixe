@@ -54,7 +54,7 @@ export default function SignInPage() {
         </button>
       </form>
       <p className="mt-4">
-        Don't have an account?{" "}
+        Don&lsquo;t have an account?{" "}
         <a href="/signup" className="text-blue-500">
           Sign Up
         </a>

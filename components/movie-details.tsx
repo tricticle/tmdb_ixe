@@ -93,7 +93,7 @@ export function MovieDetails({ movie }: MovieDetailsProps) {
 
             <div className="mt-2">
               <h3 className="text-xl font-semibold text-white mb-2">Overview</h3>
-              <p className="text-black">{movie.overview}</p>
+              <p className="text-black dark:text-white">{movie.overview}</p>
             </div>
 
             <div className="mt-4">

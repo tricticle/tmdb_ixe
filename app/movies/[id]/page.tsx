@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: MoviePageProps): Promise<Meta
         ],
       },
     }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return {
       title: "Movie - MovieDB",
@@ -61,6 +62,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
         )}
       </div>
     )
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     notFound()
   }
