@@ -1,22 +1,21 @@
-import { getMovieDetails, getMovieCredits, getSimilarMovies } from "@/lib/tmdb"
-import { MovieDetails } from "@/components/movie-details"
+import { getMovieDetails, getMovieCredits, getSimilarMovies, getMovieVideos, getRecommendedMovies } from "@/lib/tmdb"
+import { MovieDetailsSection } from "@/components/movie-details-section"
 import { MovieCredits } from "@/components/movie-credits"
-import { MovieGrid } from "@/components/movie-grid"
+import { MovieCarousel } from "@/components/movie-carousel"
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 
 interface MoviePageProps {
-  params: {
-    id: string
-  }
+  params: Promise<{ id: string }>
 }
 
 export async function generateMetadata({ params }: MoviePageProps): Promise<Metadata> {
+  const { id } = await params
   try {
-    const movie = await getMovieDetails(params.id)
+    const movie = await getMovieDetails(id)
 
     return {
-      title: `${movie.title} - MovieDB`,
+      title: `${movie.title} - tmdb_ixe`,
       description: movie.overview.substring(0, 160),
       openGraph: {
         images: [
@@ -28,41 +27,59 @@ export async function generateMetadata({ params }: MoviePageProps): Promise<Meta
         ],
       },
     }
-  } catch (error) {
+  } catch {
     return {
-      title: "Movie - MovieDB",
+      title: "Movie - tmdb_ixe",
       description: "View movie details",
     }
   }
 }
 
 export default async function MoviePage({ params }: MoviePageProps) {
+  const { id } = await params
   try {
-    const [movie, credits, similarMovies] = await Promise.all([
-      getMovieDetails(params.id),
-      getMovieCredits(params.id),
-      getSimilarMovies(params.id),
+    const [movie, credits, videos, similarMovies, recommendedMovies] = await Promise.all([
+      getMovieDetails(id),
+      getMovieCredits(id),
+      getMovieVideos(id),
+      getSimilarMovies(id),
+      getRecommendedMovies(id),
     ])
+
+    // Find official trailer
+    const trailer = videos.results.find(
+      (video) => video.site === "YouTube" && (video.type === "Trailer" || video.type === "Teaser")
+    )
 
     return (
       <div className="flex flex-col gap-12 pb-12">
-        <MovieDetails movie={movie} />
+        <MovieDetailsSection movie={movie} trailer={trailer} />
 
         <div className="container">
           <h2 className="text-2xl font-bold mb-6">Cast</h2>
           <MovieCredits credits={credits} />
         </div>
 
+        {recommendedMovies.results.length > 0 && (
+          <div className="container">
+            <MovieCarousel 
+              title="Recommended For You" 
+              movies={recommendedMovies.results.slice(0, 10)} 
+            />
+          </div>
+        )}
+
         {similarMovies.results.length > 0 && (
           <div className="container">
-            <h2 className="text-2xl font-bold mb-6">Similar Movies</h2>
-            <MovieGrid movies={similarMovies.results.slice(0, 4)} />
+            <MovieCarousel 
+              title="Similar Movies" 
+              movies={similarMovies.results.slice(0, 10)} 
+            />
           </div>
         )}
       </div>
     )
-  } catch (error) {
+  } catch {
     notFound()
   }
 }
-

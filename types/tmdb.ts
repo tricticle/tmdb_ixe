@@ -81,3 +81,37 @@ export interface Credits {
   }[]
 }
 
+export interface Genre {
+  id: number
+  name: string
+}
+
+export interface GenreListResponse {
+  genres: Genre[]
+}
+
+export interface Video {
+  id: string
+  iso_639_1: string
+  iso_3166_1: string
+  key: string
+  name: string
+  site: string
+  size: number
+  type: string
+  official: boolean
+  published_at: string
+}
+
+export interface VideoResponse {
+  id: number
+  results: Video[]
+}
+
+export interface MovieListResponse {
+  page: number
+  results: Movie[]
+  total_pages: number
+  total_results: number
+}
+
