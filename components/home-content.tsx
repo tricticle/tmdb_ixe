@@ -4,6 +4,7 @@ import { useState } from "react"
 import type { Movie } from "@/types/tmdb"
 import { MovieCarousel } from "@/components/movie-carousel"
 import { QuickViewModal } from "@/components/quick-view-modal"
+import { RecommendationsCarousel } from "@/components/recommendations-carousel"
 import { motion } from "framer-motion"
 
 interface HomeContentProps {
@@ -47,6 +48,8 @@ export function HomeContent({
         animate="visible"
         className="container py-8 flex flex-col gap-10"
       >
+        <RecommendationsCarousel />
+        
         <MovieCarousel 
           title="Trending Now" 
           movies={trending} 

@@ -6,7 +6,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Film, Search, User } from "lucide-react"
+import { Film, Search, User, Bell } from "lucide-react"
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
@@ -18,6 +18,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { NotificationCenter } from "@/components/notification-center"
 
 export function Navbar() {
   const { data: session } = useSession()
@@ -74,6 +75,8 @@ export function Navbar() {
           </form>
 
           <ThemeToggle />
+
+          {session && <NotificationCenter />}
 
           {session ? (
             <DropdownMenu>
