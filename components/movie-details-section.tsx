@@ -8,7 +8,7 @@ import { CalendarIcon, Clock, Star, Play, Heart, Bookmark, Share2 } from "lucide
 import { FavoriteButton } from "@/components/favorite-button"
 import { WatchlistButton } from "@/components/watchlist-button"
 import { useState } from "react"
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { Modal } from "@/components/ui/modal"
 import { motion } from "framer-motion"
 import Link from "next/link"
 
@@ -142,23 +142,22 @@ export function MovieDetailsSection({ movie, trailer }: MovieDetailsSectionProps
 
       {/* Trailer Modal */}
       {trailer && (
-        <Dialog open={trailerOpen} onOpenChange={setTrailerOpen}>
-          <DialogContent className="max-w-4xl p-0 overflow-hidden bg-black">
-            <DialogTitle className="sr-only">{movie.title} - Trailer</DialogTitle>
-            <DialogDescription className="sr-only">
-              Watch the official trailer for {movie.title}
-            </DialogDescription>
-            <div className="aspect-video">
-              <iframe
-                src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1&rel=0`}
-                title={trailer.name}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
-            </div>
-          </DialogContent>
-        </Dialog>
+        <Modal 
+          isOpen={trailerOpen} 
+          onClose={() => setTrailerOpen(false)}
+          title={`${movie.title} - Trailer`}
+          className="max-w-4xl"
+        >
+          <div className="aspect-video">
+            <iframe
+              src={`https://www.youtube.com/embed/${trailer.key}?autoplay=1&rel=0`}
+              title={trailer.name}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full rounded-lg"
+            />
+          </div>
+        </Modal>
       )}
     </div>
   )

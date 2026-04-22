@@ -83,10 +83,10 @@ export function usePushNotifications() {
           endpoint: pushSubscription.endpoint,
           keys: {
             p256dh: btoa(
-              String.fromCharCode(...new Uint8Array(pushSubscription.getKey("p256dh")!))
+              String.fromCharCode(...Array.from(new Uint8Array(pushSubscription.getKey("p256dh")!)))
             ),
             auth: btoa(
-              String.fromCharCode(...new Uint8Array(pushSubscription.getKey("auth")!))
+              String.fromCharCode(...Array.from(new Uint8Array(pushSubscription.getKey("auth")!)))
             ),
           },
         }),
